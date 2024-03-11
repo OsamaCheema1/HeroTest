@@ -1,0 +1,25 @@
+<div>
+    <form [formGroup]="addHeroForm" (ngSubmit)="addHero()">
+        <p>
+          <label for="firstname">Name</label>
+          <input type="text" id="firstname" name="firstname" formControlName="Name">
+        </p>
+        <p>
+          <label for="lastname">Alias</label>
+          <input type="text"  formControlName="Alias">
+        </p>
+       
+        <p>
+          <label for="email">Brand </label>
+          <select formControlName="Brand">
+            <option disabled value="null">Select Brand</option>
+            <option *ngFor="let brand of brandsList" [value]="brand.Id">
+               {{ brand.Name }}
+            </option>
+          </select>
+        </p>
+        <p>
+          <button type="submit">Submit</button>
+        </p>
+      </form>
+</div>
